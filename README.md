@@ -4,8 +4,8 @@ Maia Firewall será um front simples para meu script maiafirewall.sh existente n
 ## Nota:
   `
   Este programa é apenas uma prévia de como vai ser e de como vai funcionar. 
-  O programa final, aquele que estará no meu remaster de fato, estará totalmente modificado
-  em prol da segurança de dados.
+  O programa final, aquele que estará no meu remaster de fato, 
+  estará totalmente modificado por de baixo dos panos em prol da segurança de dados.
   `
 
 ## Imagem do programa:
