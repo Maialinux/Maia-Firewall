@@ -29,3 +29,11 @@ Passo 5 - Instalar Requerimentos:
 Passo 6 - Abrir o programa:
 
     python main.py
+
+## Observação:
+
+  `Este programa faz uso dos seguintes programas:`
+  
+  `pkexec - para ler senha de usuario que tenha permissão elevada `
+  
+  `iptables - programa usado para adicionar regras de firewall`
