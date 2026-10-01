@@ -1,4 +1,4 @@
-# Maia-Firewall Version 0.1.0 - ALPHA
+# Maia-Firewall Version 0.1.0 - Alpha  
 Maia Firewall será um front simples para meu script maiafirewall.sh existente no meu remaster
 
 ## Imagem do programa:
@@ -6,11 +6,11 @@ Maia Firewall será um front simples para meu script maiafirewall.sh existente n
 
 ## Como executar o programa no Linux pc
 
-Passo 1:
+Passo 1 - Baixar o projeto:
   
   `Baixar os arquivos da pasta`
 
-Passo 2:
+Passo 2 - Entrar na pasta:
    
    `cd pasta`
 
