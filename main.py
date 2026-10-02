@@ -50,25 +50,31 @@ class Main(ctk.CTk):
             print(tipo_protocolo)
             print(input_porta)
             print(status_de_acesso)
-            comando = [
-            "pkexec",
-            "/usr/sbin/iptables",
-            "-A", "INPUT",
-            "-p", tipo_protocolo.lower(),
-            "-m", tipo_protocolo.lower(),
-            "--dport", input_porta,
-            "-j", status_de_acesso
+            cmd_string1 = (      
+                f"/usr/sbin/iptables -A INPUT -p {tipo_protocolo.lower()} -m {tipo_protocolo.lower()} --dport {input_porta} -j {status_de_acesso} "
+                f"&& /usr/sbin/iptables-save > /etc/init.d/maiafirewall "
+                f"&& chmod +x /etc/init.d/maiafirewall"
+            )
+
+            comando1 = [
+                "pkexec",
+                "bash",
+                "-c",
+                cmd_string1 
             ]
-            subprocess.run(comando, check=True)
-            messagebox.showinfo(title="Sucesso", message="Nova regra adicionada!")
+
+            subprocess.run(comando1, check=True)
+           
+            messagebox.showinfo(title="Sucesso", message="Nova regra adicionada e salva com sucesso!")
             continuar = messagebox.askyesno(title="Maia Firewall", message="Deseja continuar adicionando regras?")
             if not continuar:
                 self.destroy()
             else:
                 self.input_porta.delete(0, "end")
-        except:
-            print("Verifique o campo da porta")
-
+        except subprocess.CalledProcessError as e:
+            messagebox.showerror(title="Erro", message=f"Falha ao executar o comando no iptables (código {e.returncode}).")
+        except Exception as e:
+            messagebox.showerror(title="Erro", message="Verifique os campos preenchidos.")
     def ativar_firewall(self):
         global ativado
         ativado = not ativado  # Inverte o valor booleano (True vira False, False vira True)

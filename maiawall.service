@@ -1,0 +1,12 @@
+[Unit]
+Description=Maia Firewall Service
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash /usr/local/bin/maiawall
+
+[Install]
+WantedBy=multi-user.target
+

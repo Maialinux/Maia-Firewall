@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 
+### BEGIN INIT INFO
+# Provides:          maiawall
+# Required-Start:    $network $local_fs
+# Required-Stop:     $network $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Maia Firewall Service
+### END INIT INFO
+
 op=$1
 
 function Firewall() {
-cat > /etc/maiawall << "EOF"
+cat > /etc/init.d/maiawall << "EOF"
 #!/usr/bin/env bash
+### BEGIN INIT INFO
+# Provides:          maiawall
+# Required-Start:    $network $local_fs
+# Required-Stop:     $network $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Maia Firewall Service
+### END INIT INFO
 
 # Tenta carregar os modulos, ignora se já forem built-in
 modprobe nf_conntrack 2>/dev/null || true
@@ -67,13 +84,20 @@ iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # Log remaining
 iptables -A INPUT -j LOG --log-prefix "FIREWALL:INPUT "
+
+# Restaura regras personalizadas salvas pela interface (se o arquivo existir)
+if [ -s /etc/init.d/maiafirewall ]; then
+    iptables-restore < /etc/init.d/maiafirewall
+fi
+
 EOF
+
 }
 
 function StartFirewall() {
     Firewall
-    chmod +x /etc/maiawall
-    bash /etc/maiawall
+    chmod +x /etc/init.d/maiawall
+    bash /etc/init.d/maiawall
 }
 
 function StopFirewall() {
