@@ -13,8 +13,6 @@ Maia Firewall será um front simples para meu script maiafirewall.sh existente n
       &nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;
     <img src="img/Maia-Firewall2.png" width="410" height="635" />
 </div>
 
