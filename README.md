@@ -4,10 +4,19 @@ Maia Firewall será um front simples para meu script maiafirewall.sh existente n
 <img src="img/02.png" />
 
 ## Imagem do programa:
-<span>
-<img src="img/Maia-Firewall.png" /> 
-<img src="img/Maia-Firewall2.png" />
-</span>
+
+<div>
+    <img src="img/Maia-Firewall.png" width="410" height="635" /> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/Maia-Firewall2.png" width="410" height="635" />
+</div>
 
 ## Como executar o programa no Linux pc
 
