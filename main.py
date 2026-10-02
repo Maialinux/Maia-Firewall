@@ -2,7 +2,7 @@ import os
 import subprocess
 from tkinter import messagebox
 import customtkinter as ctk
-
+import tkinter as tk
 ctk.set_appearance_mode("dark")
 
 ativado=False
@@ -13,6 +13,11 @@ class Main(ctk.CTk):
         super().__init__()
         self.title("Maia Firewall")
         self.geometry("400x600")
+         # Ícone da janela (favicon)
+        caminho_icone = os.path.join(os.path.dirname(__file__), "favicon.png")
+        if os.path.exists(caminho_icone):
+            self.icone = tk.PhotoImage(file=caminho_icone)
+            self.iconphoto(False, self.icone)
         self.lbl_titulo_firewall = ctk.CTkLabel(master=self,text="MAIA FIREWALL",font=ctk.CTkFont(weight="bold",size=24))
         self.lbl_titulo_firewall.pack(ipady=50)
         self.lbl_tipo_de_protocolo = ctk.CTkLabel(master=self,text="Tipo de protocolo",font=ctk.CTkFont(weight="bold",size=14))
