@@ -1,4 +1,4 @@
-# Maia Firewall Version 0.1.0 - Alpha  
+# Maia Firewall Version 0.9.2 - Alpha  
 Maia Firewall será um front simples para meu script maiafirewall.sh existente no meu remaster
 
 <img src="img/02.png" />
